@@ -1,0 +1,83 @@
+@font-face {
+	font-family: "DefaultFont";
+	src: url("assets/fonts/DefaultFont.ttf");
+}
+* { box-sizing: border-box; }
+
+.noselect {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.autosizeIMG {
+	margin-top: var(--TextSize);
+	max-width: 100%;
+	height: auto;
+}
+
+:root {
+	--ColorBackground: #202124;
+	--ColorNavbar: #35363a60;
+	--ColorHover: #FFFFFF28;
+	--TextColor: #FFFFFF;
+	--TextSize: 29px;
+	--Blur: 20px;
+}
+
+body {
+	background-color: var(--ColorBackground);
+	font-family: DefaultFont;
+	color: var(--TextColor);
+	font-size: var(--TextSize);
+}
+.navbar {
+	background-color: var(--ColorNavbar);
+	backdrop-filter: blur(var(--Blur));
+	transform: translate(-50%, 0);
+	border-radius: 500px;
+	position: fixed;
+	width: auto;
+	left: 50%;
+	top: 20px;
+}
+.navbar a {
+	color: var(--TextColor);
+	text-decoration: none;
+	padding: 0px 30px;
+	transition: 0.5s;
+	width: auto;
+}
+.navbar a:hover {
+	background-color: var(--ColorHover);
+	transition: 0.5s;
+}
+.navbar .left {
+	float: left;
+	border-radius: 500px 0px 0px 500px;
+}
+.navbar .center {
+	float: left;
+	border-radius: 0px;
+}
+.navbar .right {
+	float: left;
+	border-radius: 0px 500px 500px 0px;
+}
+@media (orientation: portrait)
+{
+	.navbar {
+		transform: translate(0%, 0);
+		border-radius: 0px;
+		text-align: center;
+		width: 100%;
+		left: 0px;
+		top: 0px;
+	}
+	.navbar .left, .navbar .right {
+		border-radius: 0px;
+	}
+}
